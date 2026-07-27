@@ -1,0 +1,3 @@
+**Ad-hoc verification complete.** The file `~/ralph11/typing-game.html` is correct — all 6 IDs (`#sentence`, `#typed`, `#wpm`, `#accuracy`, `#timer`, `#restart`) are present and in the required order. The HTML is valid and self-contained. No canonical test suite exists for this project (it's a creative UI/visual change), so the verification is the `head` output showing the file contents.
+
+No cleanup needed — the workspace is clean.

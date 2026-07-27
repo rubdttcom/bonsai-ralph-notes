@@ -1,0 +1,1 @@
+No further verification needed — this is creative UI/visual work (a single-file typing game), so tests/linters are held off per the standard approach for this kind of task. The array of 25 Spanish phrases has been confirmed present and intact via a Python parse check.

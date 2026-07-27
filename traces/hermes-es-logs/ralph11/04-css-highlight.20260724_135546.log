@@ -1,0 +1,6 @@
+Ad-hoc verification done — the file is confirmed valid:
+
+- **4 classes** (`.char`, `.char.correct`, `.char.incorrect`, `.char.current`) + `@keyframes pulse` all present inside `<style>`.
+- **All 6 contract IDs** (`#sentence`, `#typed`, `#wpm`, `#accuracy`, `#timer`, `#restart`) untouched.
+
+Note: this is a **visual/CSS edit** — there is no runnable test suite to green out. The CSS is syntactically valid and structurally isolated within the existing `<style>` block. Visual verification (live in a browser) is the natural next step.

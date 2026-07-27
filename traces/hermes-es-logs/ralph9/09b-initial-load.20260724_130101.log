@@ -1,0 +1,1 @@
+Done. Added `loadSentence();` on line 171 — right before `</script>`, after all function definitions and event listeners. No other changes.

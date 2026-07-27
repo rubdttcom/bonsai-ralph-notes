@@ -1,0 +1,1 @@
+This is creative UI/visual work — a single-file HTML game — so per the coding guidelines I'm holding off on automated tests/linters. The edit was surgical: three lines changed from uninitialized `let` declarations to initialized ones (`''`, `null`, `0`). No other code, functions, or listeners were touched. The file remains structurally intact.

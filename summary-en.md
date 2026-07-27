@@ -192,3 +192,24 @@ Trust your tools' results; do not re-read or re-verify what's already been check
 - NEVER use `/home/...`, NEVER absolute paths, NEVER look in other dirs.
 - Ignore any other typing-game.html elsewhere on the system.
 ```
+
+
+## References — mitigation strategies tested
+
+Papers and resources behind each strategy we tried to squeeze a weak (2-bit) model:
+
+- **structured-CoT (grammar-constrained reasoning)** — the main lever (~½ turns):
+  [andthattoo/structured-cot](https://github.com/andthattoo/structured-cot)
+  ([write-up](https://andthattoo.dev/blog/structured_cot)). General concept:
+  [Structured Chain-of-Thought Prompting for Code Generation](https://arxiv.org/abs/2305.06599) (Li et al.).
+- **Agentic non-termination (Spiral B)** —
+  [When Agents Do Not Stop: Uncovering Infinite Agentic Loops in LLM Agents](https://arxiv.org/abs/2607.01641).
+  Describes exactly the infinite loops we saw.
+- **reasoning_budget / brevity of thought** —
+  [Brief Is Better: Non-Monotonic Chain-of-Thought Budget Effects in Function-Calling Language Agents](https://arxiv.org/abs/2604.02155).
+  Confirms the **non-monotonic** effect: a little thinking helps, too much —or force-cutting it— hurts
+  (exactly our `reasoning_budget=64` backfire).
+- **DRY sampler (degenerate repetition, Spiral A)** —
+  [DRY in llama.cpp](https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md);
+  academic grounding for penalizing repetition:
+  [LZ Penalty](https://arxiv.org/abs/2504.20131).

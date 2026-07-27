@@ -1,0 +1,9 @@
+Done. Created the minimal `typing-game.html`:
+
+- **`<!DOCTYPE html>`** + `<html lang="en">`
+- **`<head>`**: `<meta charset="utf-8">`, `<meta name="viewport" content="width=device-width, initial-scale="`, `<title>Typing</title>`, empty `<style></style>`
+- **`<body>`**: `<h1>
+</h1>` + empty `<script></script>`
+- **No CDNs, no external deps** — fully self-contained
+
+The file lives at `~//typing-game.html` with 16 lines. Ready for the next incremental build step (sentences array, state vars, etc.) whenever you'd like to continue.

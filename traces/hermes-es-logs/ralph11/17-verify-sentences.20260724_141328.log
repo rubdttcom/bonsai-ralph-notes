@@ -1,0 +1,54 @@
+Counting the strings in the `SENTENCES` array (lines 86–136):
+
+1. `El veloz murciélago hindú comía feliz cardillo y kiwi.`
+2. `La cigüeña tocaba el saxofón detrás del palenque de paja.`
+3. `Programar en JavaScript por la mañana despeja la mente.`
+4. `Un pingüino curioso observaba las estrellas desde el iglú.`
+5. `El pequeño zorro saltó sobre el perro perezoso y dormido.`
+6. `Escribir rápido y sin errores requiere práctica diaria constante.`
+7. `La química y la física explican casi todos los fenómenos naturales.`
+8. `Ayer compré manzanas, peras y naranjas en el mercado del pueblo.`
+9. `El río Amazonas es el más caudaloso de todo el planeta Tierra.`
+10. `Aprender a mecanografiar mejora tu productividad de forma notable.`
+11. `Los gatos duermen muchas horas durante el día y cazan de noche.`
+12. `Una buena taza de café acompaña las largas jornadas de código.`
+13. `El teclado mecánico ofrece una respuesta táctil muy agradable.`
+14. `Nunca subestimes el poder de una pausa para descansar la vista.`
+15. `La montaña nevada brillaba bajo el sol del amanecer invernal.`
+16. `Practica todos los días y verás progresos en pocas semanas.`
+17. `El científico anotó cuidadosamente cada uno de sus resultados.`
+18. `Viajar abre la mente y enseña a valorar otras culturas lejanas.`
+19. `La música clásica ayuda a muchos a concentrarse mientras trabajan.`
+20. `El jardín estaba lleno de flores rojas, amarillas y violetas.`
+21. `Guarda tu trabajo con frecuencia para evitar perder tus avances.`
+22. `El faro guiaba a los barcos perdidos en la noche tormentosa.`
+23. `Leer buenos libros amplía el vocabulario y mejora la escritura.`
+24. `El café humeante despertó por fin a todo el equipo cansado.`
+25. `Los delfines nadan en grupos y se comunican con silbidos agudos.`
+26. `Una idea sencilla, bien ejecutada, vale más que mil complicadas.`
+27. `El reloj antiguo marcaba las horas con un sonido muy profundo.`
+28. `Corregir errores a tiempo ahorra muchos dolores de cabeza futuros.`
+29. `La biblioteca guardaba miles de historias esperando ser leídas.`
+30. `El chef preparó un plato exquisito con verduras frescas del huerto.`
+31. `Respira hondo, mantén la calma y escribe una letra tras otra.`
+32. `El satélite orbitaba la Tierra tomando fotografías del océano.`
+33. `Cada palabra cuenta cuando intentas transmitir una idea clara.`
+34. `El niño dibujó un dragón enorme con alas de colores brillantes.`
+35. `La lluvia caía suavemente sobre los tejados del viejo barrio.`
+36. `Un buen descanso nocturno mejora la memoria y el estado de ánimo.`
+37. `El puente colgante temblaba con el viento del atardecer frío.`
+38. `Ordena tus tareas por prioridad y avanza paso a paso cada día.`
+39. `El cielo se tiñó de naranja mientras el sol se ocultaba lento.`
+40. `La abeja laboriosa recogía néctar de flor en flor sin descanso.`
+41. `Escuchar con atención es tan importante como hablar con claridad.`
+42. `El tren atravesó túneles oscuros y valles verdes muy extensos.`
+43. `Con paciencia y esfuerzo cualquier meta acaba siendo alcanzable.`
+44. `El pintor mezcló azul y amarillo para lograr un verde intenso.`
+45. `Los relámpagos iluminaron el cielo durante la fuerte tormenta.`
+46. `Guardar silencio a veces dice mucho más que cualquier palabra.`
+47. `El explorador cruzó el desierto siguiendo las antiguas estrellas.`
+48. `Una sonrisa sincera puede cambiar por completo el día de alguien.`
+49. `La tecnología avanza deprisa y transforma nuestra vida cotidiana.`
+50. `Termina lo que empiezas y celebra cada pequeño logro conseguido.`
+
+**50 OK**

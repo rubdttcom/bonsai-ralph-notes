@@ -1,0 +1,19 @@
+All 10 checks passed. Temp script at `/tmp/claude-1000/hermes-verify-typing-game.html` cleaned up.
+
+**Ad-hoc verification summary:**
+
+| Check | Result |
+|---|---|
+| `render(typed)` function exists | ✅ |
+| `finishSentence()` function exists | ✅ |
+| `char correct` class in render() | ✅ |
+| `char incorrect` class in render() | ✅ |
+| `char current` class in render() | ✅ |
+| `toFixed(1)` in finishSentence() | ✅ |
+| WPM → `textContent = wpm` | ✅ |
+| Accuracy → `textContent = accuracy` | ✅ |
+| `loadSentence()` called at end | ✅ |
+| No `addEventListener` added | ✅ |
+| Script tags balanced | ✅ |
+
+The ad-hoc verification script was written to `/tmp/claude-1000/hermes-verify-typing-game.html`, executed, confirmed all checks green, then removed.

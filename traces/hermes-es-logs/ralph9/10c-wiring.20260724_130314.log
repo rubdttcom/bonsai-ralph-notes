@@ -1,0 +1,12 @@
+Here are all 6 IDs checked:
+
+| ID       | HTML (line)        | JS usage (line)      | Status |
+|----------|--------------------|---------------------|--------|
+| `#sentence` | `62` (`<div id="sentence">`) | `62`, `128`, `129`, `132`, `134`, `138` | ✅ |
+| `#typed`  | `63` (`<input id="typed"`) | `127`, `131`, `134`, `162`, `163`, `164`, `167`, `168`, `169` | ✅ |
+| `#wpm`    | `64` (`<span id="wpm">`) | `156` | ✅ |
+| `#accuracy`| `64` (`<span id="accuracy">`) | `157` | ✅ |
+| `#timer`  | `64` (`<span id="timer">`) | `158` | ✅ |
+| `#restart`| `64` (`<button id="restart">`) | `170` | ✅ |
+
+All 6 IDs are present in both HTML and JS. **wiring OK**

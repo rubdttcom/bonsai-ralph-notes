@@ -1,0 +1,24 @@
+**Ad-hoc verification results:**
+
+| Check | Result |
+|---|---|
+| `typing-game.html` exists | ✅ (2,559 bytes) |
+| `SENTENCES` array present | ✅ |
+| **Element count** | **25** (expected **38**) |
+| 13 new sentences added | **NO** — not found |
+| JS syntax | Broken (`Math.random *`, missing `()`, etc.) |
+
+---
+
+**Concrete blocker:** The file was corrupted during earlier edits — the CSS values got truncated (`#1` instead of `#1a1a`, `1` instead of `1.6rem`) and the JavaScript syntax is broken (`Math.random *` instead of `Math.random()`, missing parentheses throughout). The 13 new sentences were **never** properly appended.
+
+I **cannot verify this work as done** because the task was never successfully completed — the file is in a broken, unworking state.
+
+**What needs to happen:**
+1. Restore `typing-game.html` to its original valid state (25 sentences, working HTML/JS).
+2. Append the 13 new sentence strings at the end of `SENTENCES`.
+3. I can then verify the count is 38 and the new sentences are present.
+
+⚠️ File-mutation verifier: 2 file(s) were NOT modified this turn despite any wording above that may suggest otherwise. Run `git status` or `read_file` to confirm.
+  • `~/kbd/typing-game` — [write_file] Refusing to write internal read_file display text as file content. Strip read_file line-number prefixes or reconstruct the intended file contents before writing.
+  • `~` — [write_file] Failed to write file: /usr/bin/bash: línea 3: `/home/.hermes-tmp.21110`: Permiso denegado

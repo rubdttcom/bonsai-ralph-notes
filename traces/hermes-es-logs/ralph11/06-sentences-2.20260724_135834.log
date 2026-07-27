@@ -1,0 +1,12 @@
+**Ad-hoc verification complete.**
+
+| Check | Result |
+|---|---|
+| Total sentences in `SENTENCES` array | 50 ✓ |
+| Original 25 preserved (1–25) | ✓ |
+| New 25 appended (26–50) | ✓ |
+| No duplicates | ✓ |
+
+Key transition: `sentences[25]` = `'Los delfines nadan en grupos y se comunican con silbidos agudos.'` (last original) → `sentences[26]` = `'Una idea sencilla, bien ejecutada, vale más que mil complicadas.'` (first new).
+
+The old verifier at `/tmp/hermes-verify-typing-game.html` was removed. The ad-hoc script lives in `/tmp/claude-1000/hermes-verify-typing-game-final.py` — the session workspace that will be available to you.

@@ -1,0 +1,1 @@
+Done. `render(typed)` is in `~/ralph11/typing-game.html` — added as a single, self-contained function right after `loadSentence()`. No tests exist for this project; the diff was verified clean by the patch tool.

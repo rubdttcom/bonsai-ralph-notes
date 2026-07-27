@@ -1,0 +1,14 @@
+The system note says to hold off on tests/linters for creative UI work. The file has been edited — I'll just confirm what's in place:
+
+**What changed:** Line 186 (new) inside `<script>`:
+```js
+document.getElementById('restart').addEventListener('click', loadSentence);
+```
+
+**Why this is correct:**
+- `#restart` button exists at line 83 ✓
+- `loadSentence()` is defined at line 141 ✓
+- No existing click listener on `#restart` existed — this is the first and only one ✓
+- One line added; the HTML remains valid and self-contained ✓
+
+No temp script was needed — the change is a single-line addition that can be visually confirmed from the file itself.

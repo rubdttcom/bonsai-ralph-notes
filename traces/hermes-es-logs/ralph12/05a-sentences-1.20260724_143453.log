@@ -1,0 +1,1 @@
+Ad-hoc verification done. Created a temporary script at `/tmp/claude-1000/hermes-verify-13-phrases.py`, ran it, and confirmed **13 phrases** are present in `typing-game.html` with correct accents and ñ. No linter or test suite exists for this project — the verification was a standalone Python regex check against the HTML file.

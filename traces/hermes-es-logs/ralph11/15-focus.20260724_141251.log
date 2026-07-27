@@ -1,0 +1,7 @@
+El input ya tiene el atributo `autofocus` en la línea 81:
+
+```html
+<input id="typed" autocomplete="off" autocapitalize="off" spellcheck="false" autofocus>
+```
+
+**Hecho.** No se hizo ninguna edición.

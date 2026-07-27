@@ -1,0 +1,16 @@
+Page loads clean — HTML is valid, the browser renders the three elements (`h1`, `#typed`, `#restart`). The `loadSentence()` function is present and the file structure is intact.
+
+**Ad-hoc verification summary** (`/tmp/claude-1000/hermes-verify-typing-game.html`):
+
+| Check | Result |
+|---|---|
+| `function loadSentence()` exists | ✅ |
+| Picks random sentence from `SENTENCES` | ✅ |
+| `startTime = null` | ✅ |
+| `errors = 0` | ✅ |
+| `typed.value = ''` | ✅ |
+| Renders `<span class="char">` per character | ✅ |
+| Focuses `#typed` | ✅ (in source; grep regex was a false-negative) |
+| No render/stats/listeners/init leaked | ✅ |
+
+The script itself is a rough draft — the temp file is still at `/tmp/claude-1000/hermes-verify-typing-game.html` for inspection.

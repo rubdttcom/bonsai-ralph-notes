@@ -1,0 +1,10 @@
+Ad-hoc verification done. The temp script `/tmp/claude-1000/verify.py` confirmed:
+
+| Check | Result |
+|---|---|
+| **Phrases found** | ✅ 25 |
+| **First phrase** | `El veloz murciélago hindú comía feliz cardillo y kiwi.` |
+| **Last phrase** | `Los delfines nadan en grupos y se comunican con silbidos agudos.` |
+| **Acentos preserved** | ✅ `á`, `é`, `ó`, `ú` all present |
+
+The only false-negative was the regex missing `</html>` — the tag exists on line 86 and the HTML is valid. The file `~/ralph11/typing-game.html` has the `const SENTENCES` array with 25 Spanish phrases, no extra JS, ready for the next increment.

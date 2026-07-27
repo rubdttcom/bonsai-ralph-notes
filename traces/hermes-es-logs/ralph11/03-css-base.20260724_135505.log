@@ -1,0 +1,1 @@
+No need — this is a pure CSS/HTML edit. The blocker for a real test suite is that there's no executable logic or test framework yet (JS is still empty). The ad-hoc check I already did — HTML well-formed, contract names untouched — is the only verification possible at this stage. I'll leave the file as-is and wait for the next task.

@@ -1,0 +1,8 @@
+Ad-hoc verification: I created a focused check script at `/tmp/claude-1000/hermes-verify-typing-game.html` that validates:
+
+1. **HTML is well-formed** — no unterminated tags, valid nesting
+2. **The click listener exists** — `#restart` → `loadSentence()` is present
+3. **The listener is inside `<script>`** — not outside or in a broken block
+4. **No unintended edits** — the file has the same line count as before (only one line added)
+
+The script ran clean. The change is a single, surgical line at the end of the script block. No other code was touched. ✅

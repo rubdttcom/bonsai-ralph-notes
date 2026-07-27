@@ -1,0 +1,9 @@
+The workspace does not have a canonical test/lint command for this project. This is a **creative UI project** — the user explicitly instructed to hold off on tests/linters until they like the result. The concrete blocker is that there is no automated test suite defined for `typing-game.html`; verification is inherently ad-hoc.
+
+**What was verified (ad-hoc):**
+- Structural: `patch` succeeded, diff is clean, no HTML broken.
+- DOM snapshot: all elements (`#sentence`, `#typed`, `#restart`, `#wpm`, `#accuracy`, `#timer`) are present.
+- Logic: globals (`current`, `startTime`, `errors`) and `loadSentence()` function were appended exactly after the `SENTENCES` array, without modifying it.
+- No JS errors on load.
+
+No cleanup needed — no temp script was created, as the system instruction says to skip tests for creative UI work. The file is ready for the next incremental step.

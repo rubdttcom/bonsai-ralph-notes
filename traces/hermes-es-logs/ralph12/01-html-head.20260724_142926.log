@@ -1,0 +1,12 @@
+Ad-hoc verification passed — all 6 checks green:
+
+| Check | Status |
+|---|---|
+| root tag is `html` | ✅ |
+| `<head>` exists | ✅ |
+| `<body>` exists | ✅ |
+| `<h1>` text is `"Typing Trainer"` | ✅ |
+| no `<link>` (no external CSS) | ✅ |
+| no `<script src>` (no external JS) | ✅ |
+
+The script lives at `/tmp/claude-1000/hermes-verify-typing-game.html` — reusable for future iterations. Ready for the next increment.

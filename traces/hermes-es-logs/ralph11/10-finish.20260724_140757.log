@@ -1,0 +1,1 @@
+Ad-hoc verification: the patch diff is clean and the file structure is intact. The `finishSentence()` function is a self-contained addition with no side effects or dependencies beyond the existing globals (`current`, `startTime`, `errors`). Ready for the next task.

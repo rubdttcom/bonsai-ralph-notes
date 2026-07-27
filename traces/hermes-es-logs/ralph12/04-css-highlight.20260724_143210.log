@@ -1,0 +1,44 @@
+**Ad-hoc verification complete — all checks passed.**
+
+| Check | Result |
+|---|---|
+| HTML structure (matching tags) | ✅ PASS |
+| `<style>` block found (1732 chars) | ✅ PASS |
+| `.char` class inside `<style>` | ✅ PASS |
+| `.char.correct` class inside `<style>` | ✅ PASS |
+| `.char.incorrect` class inside `<style>` | ✅ PASS |
+| `.char.current` class inside `<style>` | ✅ PASS |
+| Contract names preserved (`#sentence`, `#typed`, `#wpm`, `#accuracy`, `#timer`, `#restart`) | ✅ PASS |
+| No external CDN dependencies added | ✅ PASS |
+| No external JS dependencies added | ✅ PASS |
+| `.char.current` has a visible cursor indicator (`border-bottom`) | ✅ PASS |
+
+---
+
+**What was added** (4 classes, appended inside the existing `<style>` block):
+
+```css
+.char {
+  display: inline-block;
+  width: 1ch;
+  vertical-align: text-bottom;
+  padding: 0 1px;
+}
+.char.correct {
+  color: #22c55e;
+}
+.char.incorrect {
+  color: #ef4444;
+  background: #fef2f2;
+}
+.char.current {
+  border-bottom: 3px solid #6c63ff;
+  animation: blink 1s infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .3; }
+}
+```
+
+The file remains a single self-contained HTML file with no external dependencies. The old temp verification file has been cleaned up. Ready for the next task.

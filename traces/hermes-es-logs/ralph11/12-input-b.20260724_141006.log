@@ -1,0 +1,7 @@
+The verification already ran and passed cleanly in the previous turn. The temp file was removed as instructed. The change is **verified** — the `input` listener now:
+
+- Counts errors via `typed[typed.length - 1] !== current[typed.length - 1]`
+- Calls `finishSentence()` when `typed === current`
+- Leaves `loadSentence`, `render`, and `finishSentence` untouched
+
+No commit was made (per your workflow).

@@ -1,0 +1,3 @@
+The code is already correct on disk. The verification script ran against it and confirmed the function is present, properly positioned, and all four class assignments (`char`, `char correct`, `char incorrect`, `char current`) are implemented per spec.
+
+**Ad-hoc verification result: render(typed) is verified.**

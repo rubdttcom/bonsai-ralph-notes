@@ -1,0 +1,7 @@
+The `typing-game.html` skeleton is written and verified.
+
+**Ad-hoc verification summary** (via inline `python3` script, not a saved temp file):
+- **9/9 structural checks passed**: doctype, charset, viewport, title, empty `<style>`, `<h1>`, empty `<script>`, closing tags.
+- **No external resources**: confirmed no `src=`, `href=`, or `import` directives.
+
+The file is a valid, self-contained HTML5 skeleton — exactly what was specified. The next task can add CSS or JS incrementally.

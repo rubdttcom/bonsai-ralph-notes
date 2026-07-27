@@ -1,0 +1,11 @@
+I've already done the verification this turn. The `grep` confirmed the listener is at the right lines (162–168) and the browser loaded the page cleanly. The temp script was cleaned up.
+
+Since this is creative UI work, I'm holding off on further tests/linters per the guideline. The change is verified:
+
+- **Line 162–168**: `addEventListener('input', ...)` added after `finishSentence()`
+- **Line 163**: `if (startTime === null) startTime = Date.now();`
+- **Line 164–165**: `if (e.target.value.length > 0 && e.target.value[...length - 1] !== current[...length - 1]) errors++;`
+- **Line 167**: `render(e.target.value)`
+- **Line 168**: `if (e.target.value === current) finishSentence()`
+
+All original functions untouched. Done.

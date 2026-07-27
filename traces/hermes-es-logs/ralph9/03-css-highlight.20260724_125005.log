@@ -1,0 +1,8 @@
+Done. The 4 CSS classes were added to `typing-game.html` and verified:
+
+- `.char` — default gray inline spans
+- `.char.correct` — green + bold
+- `.char.incorrect` — red text on light-red background
+- `.char.current` — blue underline as cursor indicator
+
+All inside `<style>`. HTML structure is valid. Script cleaned up.

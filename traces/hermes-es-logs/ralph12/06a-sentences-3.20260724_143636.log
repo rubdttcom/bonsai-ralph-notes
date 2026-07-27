@@ -1,0 +1,11 @@
+Ad-hoc verification **PASSED**:
+
+- **43 phrases** total (30 original + 13 new)
+- **No numbered phrases**
+- **All 13 new phrases** present at positions 31–43
+- **HTML structure intact**
+- Script cleaned up
+
+*(Note: item 35 showing as "Respira hondo" is a parsing artifact from my comma-split in the verification script — the actual HTML has the full phrase "Respira hondo, mantén la calma y escribe una letra tras otra." intact.)*
+
+The edit was a surgical `patch` to the existing file — no rewrites, no duplication.

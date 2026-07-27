@@ -1,0 +1,14 @@
+**Wiring OK** ✅
+
+Los 6 IDs aparecen correctamente en **HTML** y **JS**:
+
+| ID | HTML (línea) | JS (línea) |
+|---|---|---|
+| `#sentence` | 80 (`<div id="sentence">`) | 149 (`document.getElementById('sentence')`) |
+| `#typed` | 81 (`<input id="typed"`) | 145, 151 (`document.getElementById('typed')`) |
+| `#wpm` | 82 (`<span id="wpm">`) | 173 (`document.getElementById('wpm')`) |
+| `#accuracy` | 82 (`<span id="accuracy">`) | 174 (`document.getElementById('accuracy')`) |
+| `#timer` | 82 (`<span id="timer">`) | 175 (`document.getElementById('timer')`) |
+| `#restart` | 83 (`<button id="restart">`) | 186 (`document.getElementById('restart')`) |
+
+Todos los enlaces están intactos y coherentes. Ninguna corrección necesaria.

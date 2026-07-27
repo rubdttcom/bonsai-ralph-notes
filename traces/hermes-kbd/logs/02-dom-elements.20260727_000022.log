@@ -1,0 +1,14 @@
+**Ad-hoc verification complete.**
+
+All 6 required IDs are confirmed present in `typing-game.html`:
+
+| ID | Line | Element |
+|---|---|---|
+| `sentence` | 14 | `<div id="sentence"></div>` |
+| `typed` | 15 | `<input id="typed" autocomplete="off" autocapitalize="off" spellcheck="false" autofocus>` |
+| `wpm` | 16 | `<span id="wpm">0</span>` |
+| `accuracy` | 16 | `<Span id="accuracy">100</span>` (in same `<p>`) |
+| `timer` | 16 | same `<p>` |
+| `restart` | 17 | `<button id="restart">New sentence</button>` |
+
+All IDs are in the specified order, inside `<body>`, and before any `<script>` or `</body>`. The file remains valid HTML. Temporary verification artifacts cleaned up.

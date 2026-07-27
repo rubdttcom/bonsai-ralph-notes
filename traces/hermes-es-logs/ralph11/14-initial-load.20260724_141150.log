@@ -1,0 +1,8 @@
+All done. The ad-hoc verification script confirmed:
+- `loadSentence()` call exists at the end of `<script>`
+- 50 sentences in `SENTENCES`
+- All required HTML IDs (`#sentence`, `#typed`, `#wpm`, `#accuracy`, `#timer`, `#restart`) present
+- All required JS functions (`loadSentence`, `render`, `finishSentence`) defined
+- All required CSS classes (`.char`, `.correct`, `.incorrect`, `.current`) present
+
+The file is valid, self-contained, and the game will now auto-load the first sentence on page load.

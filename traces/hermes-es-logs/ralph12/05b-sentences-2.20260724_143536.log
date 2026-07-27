@@ -1,0 +1,9 @@
+Ad-hoc verification passed:
+
+| Check | Result |
+|---|---|
+| Sentence count | **25** (13 original + 12 added) |
+| No numbering | ✅ none detected |
+| Array structure intact | ✅ regex matched `const SENTENCES [...]` cleanly |
+
+Script at `/tmp/claude-1000/hermes-verify-sentence-count.py` — can clean up when you're ready.

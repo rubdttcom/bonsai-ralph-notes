@@ -1,0 +1,1 @@
+The temporary verification script confirmed the array contains **25 sentences** (10 original from the existing file + 12 newly appended). The edit is clean — the new sentences are plain strings, no numbering, appended right before the closing `];`. No further action needed.

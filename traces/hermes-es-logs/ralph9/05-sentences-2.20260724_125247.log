@@ -1,0 +1,7 @@
+Ad-hoc verification passed:
+
+- **50 phrases** confirmed in the `const SENTENCES` array
+- Spot-checked two new entries are present
+- Browser console independently confirmed `SENTENCES.length === 50`
+
+The temp verification script has been cleaned up.

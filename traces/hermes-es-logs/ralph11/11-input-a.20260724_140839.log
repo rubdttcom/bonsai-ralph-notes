@@ -1,0 +1,6 @@
+Done. The verification script has been cleaned up. The only change was adding 3 lines (a `document.getElementById('typed').addEventListener('input', ...)` listener) to `typing-game.html` — a surgical addition that:
+
+- Fires on each keystroke
+- Seeds `startTime = Date.now()` on the first keystroke
+- Calls `render(e.target.value)` to highlight letters in real time
+- Does **not** touch error counting or sentence-finish detection (those are the next task)
