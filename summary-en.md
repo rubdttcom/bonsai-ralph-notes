@@ -1,7 +1,3 @@
----
-title: Summary (English)
----
-
 # Performance & methodology notes — structured-CoT in the Ralph loop
 
 Date: 2026-07-23. Context: test whether structured-CoT (pre-trigger grammar)

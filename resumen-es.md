@@ -1,7 +1,3 @@
----
-title: Resumen (Español)
----
-
 # Notas de rendimiento y metodología — structured-CoT en el Ralph loop
 
 Fecha: 2026-07-23. Contexto: probar si structured-CoT (pre-trigger grammar)
