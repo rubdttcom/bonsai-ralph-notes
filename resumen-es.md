@@ -121,3 +121,74 @@ agotan en **Spiral B**, que es el techo de inteligencia del 2-bit.
 | **Refuerzo v1** ("1 tool/turno") | +turnos, peor | microgestión → fragmenta el uso de tools |
 | **reasoning_budget agresivo** (=64) | empeora **Spiral B** | corta el razonamiento → no puede recuperarse de un error |
 | **Cualquier palanca de inferencia vs Spiral B** | no lo cura | DRY/budget/temp no tocan el *thrash* agéntico = techo del 2-bit |
+
+
+## El objetivo y el prompt de tarea
+
+En **todos** los runs el objetivo fue el mismo: construir `typing-game.html` — un juego de mecanografía de **un solo fichero** (HTML + CSS + JS vanilla, sin CDNs), con 50 frases, resaltado de aciertos/errores letra a letra y estadísticas de WPM / precisión / tiempo. Lo único que cambiaba entre runs era **en cuántas tareas se troceaba** el trabajo y **el idioma**.
+
+Cada tarea es un prompt corto y atómico que **lee el fichero actual y añade una pieza pequeña**. Ejemplo real (`09-render`):
+
+```
+Abre `typing-game.html`. El `<script>` ya tiene `loadSentence()`. Añade SOLO la función
+`render(typed)` (edición pequeña) que recorre los spans `.char` de `#sentence` y asigna a
+cada índice i la className:
+- `char correct`   si typed[i] === current[i];
+- `char incorrect` si existe typed[i] y difiere;
+- `char current`   si i === typed.length;
+- `char`           en el resto.
+Nada más. Guarda y confirma.
+```
+
+## Sets de tarea (muchos menos que los runs)
+
+17 directorios de trabajo (18 runs contando el sub-test `hot-01`), pero solo **5 sets de tarea distintos** — porque casi siempre relanzábamos el mismo objetivo con otra granularidad o idioma:
+
+| Set | Nº tareas | Idioma | Decomposición | Runs que lo usaron |
+|--|--|--|--|--|
+| A | **10** | ES | original | ralph2 – ralph8 (7 runs) |
+| B | **14** | ES | *tail* troceado | ralph9, ralph10 |
+| C | **18** | ES | lógica atomizada | ralph11 |
+| D | **20** | ES | frases troceadas | ralph12, ralph13, ralph14 · atomic-agent (solo tarea 01) |
+| E | **20** | EN | traducción de D | ralph-en, kbd, kbd/hot-01 · pi (solo tarea 01) |
+
+La app final es siempre la misma; el nº de tareas solo refleja **cómo de fino se partió el trabajo** (más tareas = edits más pequeños, para no pasar del cap 8192⁶ y acotar los spirals⁷).
+
+## AGENTS.md — versiones (el contrato del proyecto)
+
+`AGENTS.md` es el contrato que el agente lee al empezar cada tarea: objetivo, contrato de nombres (ids/clases/funciones) y reglas de edición. Hubo **5 variantes** (agrupadas por su contenido real):
+
+| Variante | Idioma | Qué añade respecto a la base | Runs |
+|--|--|--|--|
+| **Base** | ES | objetivo + contrato de nombres + reglas ("edits pequeños, lee antes de editar, HTML válido") | ralph2–5, ralph8–14 |
+| **+ Refuerzo v1** | ES | bloque `ASSESS/ACTION` + *"haz UNA sola llamada a herramienta y para"* | ralph6 |
+| **+ Refuerzo v2** | ES | bloque `ASSESS/ACTION` + *"MÍNIMOS turnos, no re-verifiques lo ya comprobado"* | ralph7 |
+| **Base EN** | EN | traducción del contrato base | ralph-en |
+| **EN + PATH** | EN | + bloque **CRITICAL — FILE PATH** al frente (regla de ruta) | kbd, kbd/hot-01 |
+
+**Extracto del contrato base (objetivo):**
+```
+App web de UN SOLO fichero `typing-game.html` (HTML + CSS + vanilla JS, sin CDNs).
+Muestra frases aleatorias de una lista de 50; el usuario teclea y se resaltan
+aciertos/errores letra a letra, con WPM, precisión y tiempo.
+Se construye de forma INCREMENTAL: cada tarea LEE el fichero y AÑADE una pieza pequeña.
+```
+
+**Refuerzo v1 (ralph6) — la cláusula que fragmentó el trabajo (empeoró):**
+```
+ACTION: call-tool → aún falta algo: haz UNA sola llamada a herramienta y para.
+```
+
+**Refuerzo v2 (ralph7) — quita esa cláusula, orienta a mínimos turnos:**
+```
+Tu meta es completar la tarea en los MÍNIMOS turnos posibles.
+Fíate del resultado de tus herramientas; no releas ni re-verifiques lo ya comprobado.
+```
+
+**Bloque PATH (kbd) — el que arregló las rutas (0 path-fails):**
+```
+# CRITICAL — FILE PATH
+- ALWAYS use the bare relative name: `typing-game.html`
+- NEVER use `/home/...`, NEVER absolute paths, NEVER look in other dirs.
+- Ignore any other typing-game.html elsewhere on the system.
+```

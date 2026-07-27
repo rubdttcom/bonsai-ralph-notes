@@ -121,3 +121,74 @@ harness → language → paths. The *strategy* fixes (scot, atomizing, DRY, clea
 | **Reinforcement v1** ("1 tool/turn") | +turns, worse | micromanagement → fragments tool use |
 | **Aggressive reasoning_budget** (=64) | worsens **Spiral B** | cuts reasoning short → can't recover from an error |
 | **Any inference lever vs Spiral B** | doesn't cure it | DRY/budget/temp don't touch the agentic *thrash* = the 2-bit's ceiling |
+
+
+## The goal and the task prompt
+
+In **every** run the goal was the same: build `typing-game.html` — a **single-file** typing game (HTML + CSS + vanilla JS, no CDNs), with 50 sentences, letter-by-letter correct/incorrect highlighting and WPM / accuracy / time stats. The only things that changed between runs were **how many tasks the work was split into** and **the language**.
+
+Each task is a short, atomic prompt that **reads the current file and adds a small piece**. Real example (`09-render`):
+
+```
+Open `typing-game.html`. The `<script>` already has `loadSentence()`. Add ONLY the
+function `render(typed)` (small edit) that iterates over the `.char` spans of `#sentence`
+and assigns each index i the className:
+- `char correct`   if typed[i] === current[i];
+- `char incorrect` if typed[i] exists and differs;
+- `char current`   if i === typed.length;
+- `char`           otherwise.
+Nothing else. Save and confirm.
+```
+
+## Task sets (far fewer than the runs)
+
+17 working directories (18 runs counting the `hot-01` sub-test), but only **5 distinct task sets** — because we kept relaunching the same goal with a different granularity or language:
+
+| Set | # tasks | Lang | Decomposition | Runs that used it |
+|--|--|--|--|--|
+| A | **10** | ES | original | ralph2 – ralph8 (7 runs) |
+| B | **14** | ES | *tail* split | ralph9, ralph10 |
+| C | **18** | ES | logic atomized | ralph11 |
+| D | **20** | ES | sentences split | ralph12, ralph13, ralph14 · atomic-agent (task 01 only) |
+| E | **20** | EN | translation of D | ralph-en, kbd, kbd/hot-01 · pi (task 01 only) |
+
+The final app is always the same; the task count only reflects **how finely the work was split** (more tasks = smaller edits, to stay under the 8192 cap⁶ and bound the spirals⁷).
+
+## AGENTS.md — versions (the project contract)
+
+`AGENTS.md` is the contract the agent reads at the start of each task: goal, name contract (ids/classes/functions) and editing rules. There were **5 variants** (grouped by their actual content):
+
+| Variant | Lang | What it adds vs the base | Runs |
+|--|--|--|--|
+| **Base** | ES | goal + name contract + rules ("small edits, read before editing, valid HTML") | ralph2–5, ralph8–14 |
+| **+ Reinforcement v1** | ES | `ASSESS/ACTION` block + *"make ONE single tool call and stop"* | ralph6 |
+| **+ Reinforcement v2** | ES | `ASSESS/ACTION` block + *"MINIMUM turns, don't re-verify what's already checked"* | ralph7 |
+| **Base EN** | EN | translation of the base contract | ralph-en |
+| **EN + PATH** | EN | + a **CRITICAL — FILE PATH** block up front (path rule) | kbd, kbd/hot-01 |
+
+**Base contract excerpt (goal):**
+```
+A single-file web app `typing-game.html` (HTML + CSS + vanilla JS, no CDNs).
+Shows random sentences from a list of 50; the user types them and correct/incorrect
+characters are highlighted letter by letter, with WPM, accuracy and time.
+Built INCREMENTALLY: each task READS the file and ADDS a small piece.
+```
+
+**Reinforcement v1 (ralph6) — the clause that fragmented the work (made it worse):**
+```
+ACTION: call-tool -> still something missing: make ONE single tool call and stop.
+```
+
+**Reinforcement v2 (ralph7) — drops that clause, aims for minimum turns:**
+```
+Your goal is to finish the task in the FEWEST possible turns.
+Trust your tools' results; do not re-read or re-verify what's already been checked.
+```
+
+**PATH block (kbd) — the one that fixed the paths (0 path-fails):**
+```
+# CRITICAL — FILE PATH
+- ALWAYS use the bare relative name: `typing-game.html`
+- NEVER use `/home/...`, NEVER absolute paths, NEVER look in other dirs.
+- Ignore any other typing-game.html elsewhere on the system.
+```
